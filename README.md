@@ -4,6 +4,18 @@ A curated collection of **823 skills** harvested from popular Claude Code market
 
 Future Claude projects (web, Code, API) can reference this repo as a skills source — point Claude at a skill's directory and it can load the `SKILL.md` plus any supporting files (scripts, references, templates).
 
+## Use it with Claude.ai web — bypass the 200-skill quota
+
+Upload a single **router skill** that delegates to this whole library on demand:
+
+1. Build the ZIP: `cd skills-router && zip -r ../skills-router.zip . && cd ..`
+2. Upload `skills-router.zip` in **claude.ai → Settings → Capabilities → Skills** (uses 1 of your 200 slots).
+3. Enable the GitHub connector (Settings → Connectors → GitHub) so Claude can fetch SKILL.md files from this repo, **or** make the repo public and rely on web fetch.
+4. Ask anything; the router selects the matching skill from `CATALOG.md` and loads it from `https://raw.githubusercontent.com/mliad313sn/skills/claude/install-marketplace-skills-SA8EJ/<path>`.
+
+Full setup: [`skills-router/HOW-TO-UPLOAD.md`](skills-router/HOW-TO-UPLOAD.md).
+
+
 ## Annuaire — How to find a skill
 
 | File | Use case |
